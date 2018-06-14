@@ -1,0 +1,121 @@
+<!DOCTYPE=html>
+<html>
+    <head>
+        <title>Faculty Manager</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+        <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+        <script src="app.js"></script>
+        <script src="templateManager.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        
+    </body>
+
+    <script id="Misc-template" type="text/x-handlebars-template">
+        <table cellpadding="0" cellspacing="0" border="0" class="faculty-table" id="Middle-School-facultyTable">
+            <tbody class="facultyTableBody" id="Middle-School-Table-Body">
+                {{#members}}
+                <tr id="{{Key}}">
+                    <td class="drag-handler"></td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Middle-School/{{Key}}/Role" value="{{Role}}" placeholder="Role">
+                    </td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Middle-School/{{Key}}/Name" value="{{Name}}" placeholder="Name">
+                    </td>
+                    <td class="table__cell">
+                        <button class="table__del-row-btn">x</button>
+                    </td>
+                </tr>
+                {{/members}}
+            </tbody>
+        </table>
+        <div class="table__add-row">
+            <span class="table__add-row-btn" id="Elementary-Table_addButton">+</span>
+        </div>
+    </script>
+    <script id="Middle-School-template" type="text/x-handlebars-template">
+        <table cellpadding="0" cellspacing="0" border="0" class="faculty-table" id="Middle-School-facultyTable">
+            <tbody class="facultyTableBody" id="Middle-School-Table-Body">
+                {{#members}}
+                <tr id="{{Key}}">
+                    <td class="drag-handler"></td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Middle-School/{{Key}}/Class" value="{{Class}}" placeholder="Role">
+                    </td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Middle-School/{{Key}}/Name" value="{{Name}}" placeholder="Title/Name">
+                    </td>
+                    <td class="table__cell">
+                        <button class="table__del-row-btn">x</button>
+                    </td>
+                </tr>
+                {{/members}}
+            </tbody>
+        </table>
+        <div class="table__add-row">
+            <span class="table__add-row-btn" id="Elementary-Table_addButton">+</span>
+        </div>
+    </script>
+    <script id="Pre-K-template" type="text/x-handlebars-template">
+        <table cellpadding="0" cellspacing="0" border="0" class="faculty-table" id="Pre-K-facultyTable">
+            <tbody class="facultyTableBody" id="Pre-K-Table-Body">
+                {{#members}}
+                <tr id="{{Key}}">
+                    <td class="drag-handler"></td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Pre-K/{{Key}}/Class" value="{{Class}}" placeholder="Class">
+                    </td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Pre-K/{{Key}}/Name" value="{{Name}}" placeholder="Teacher Name">
+                    </td>
+                    <td class="table__cell">
+                        <button class="table__del-row-btn">x</button>
+                    </td>
+                </tr>
+                {{/members}}
+            </tbody>
+        </table>
+        <div class="table__add-row">
+            <span class="table__add-row-btn" id="Elementary-Table_addButton">+</span>
+        </div>
+    </script>
+    <script id="Elementary-School-template" type="text/x-handlebars-template">
+        <table cellpadding="0" cellspacing="0" border="0" class="faculty-table" id="Elementary-School-facultyTable">
+            <tbody class="facultyTableBody" id="Elementary-School-Table-Body">
+                {{#members}}
+                <tr id="{{Key}}">
+                    <td class="drag-handler"></td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Elementary-School/{{Key}}/Class" value="{{Class}}" placeholder="Class">
+                    </td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Elementary-School/{{Key}}/Name" value="{{Name}}" placeholder="Teacher Name">
+                    </td>
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Elementary-School/{{Key}}/RoomNumber" value="{{Room}}" placeholder="Room Number">
+                    </td>
+                    {{#if assistant}}
+                    <td class="table__cell">
+                        <input type="text" class="field" id="Elementary-School/{{Key}}/Assistant" value="{{Assistant}}" placeholder="Assistant Name?">
+                    </td>
+                    {{/if}}
+                    <td class="table__cell">
+                        <button class="table__del-row-btn">x</button>
+                    </td>
+                </tr>
+                {{/members}}
+            </tbody>
+        </table>
+        <div class="table__add-row">
+            <span class="table__add-row-btn" id="Elementary-School-Table_addButton">+</span>
+        </div>
+    </script>
+    
+</html>
